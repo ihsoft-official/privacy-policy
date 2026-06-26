@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qalb e Qurani – Support</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:       #1a7a5e;
+      --teal-light: #e8f5f0;
+      --teal-mid:   #2ea882;
+      --gold:       #c9a84c;
+      --ink:        #111827;
+      --muted:      #6b7280;
+      --bg:         #f9fafb;
+      --white:      #ffffff;
+      --border:     #e5e7eb;
+      --lavender:   #f0eeff;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #0f5c44 0%, #1a7a5e 60%, #2ea882 100%);
+      color: var(--white);
+      padding: 60px 24px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .app-icon {
+      width: 80px;
+      height: 80px;
+      background: #0f3d2e;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 38px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .hero h1 {
+      font-family: 'Amiri', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+    .hero .arabic {
+      font-family: 'Amiri', serif;
+      font-size: 1.5rem;
+      opacity: 0.85;
+      margin-bottom: 12px;
+      direction: rtl;
+    }
+    .hero p {
+      font-size: 1rem;
+      opacity: 0.8;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── Main ── */
+    .main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    /* ── Section ── */
+    .section {
+      margin-bottom: 36px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .section-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--teal-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+    .section h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .card-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .card-row:last-child { border-bottom: none; }
+    .card-row:hover { background: var(--bg); }
+    .row-icon {
+      font-size: 20px;
+      width: 32px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .row-text strong {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .row-text span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .row-text a {
+      color: var(--teal);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+    .row-text a:hover { text-decoration: underline; }
+
+    /* ── Features grid ── */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .feature-tile {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 16px;
+    }
+    .feature-tile .emoji { font-size: 22px; margin-bottom: 8px; display: block; }
+    .feature-tile strong { font-size: 0.9rem; display: block; margin-bottom: 4px; }
+    .feature-tile p { font-size: 0.82rem; color: var(--muted); }
+
+    /* ── Disclaimer ── */
+    .disclaimer {
+      background: var(--lavender);
+      border: 1px solid #d8d0ff;
+      border-radius: 14px;
+      padding: 18px 20px;
+      font-size: 0.85rem;
+      color: #4b4580;
+      line-height: 1.6;
+    }
+
+    /* ── Contact CTA ── */
+    .contact-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--teal);
+      color: var(--white);
+      padding: 11px 22px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .contact-cta:hover { background: #0f5c44; }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding: 24px 16px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+    .footer a { color: var(--teal); text-decoration: none; }
+
+    @media (max-width: 500px) {
+      .hero h1 { font-size: 1.7rem; }
+      .features { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="app-icon">📖</div>
+    <div class="arabic">قلبِ قرآنی</div>
+    <h1>Qalb e Qurani Support</h1>
+    <p>We're here to help with any questions, feedback, or issues with the app.</p>
+  </div>
+
+  <div class="main">
+
+    <!-- Contact -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📩</div>
+        <h2>Contact Us</h2>
+      </div>
+      <div class="card">
+        <div class="card-row">
+          <div class="row-icon">✉️</div>
+          <div class="row-text">
+            <strong>Email Support</strong>
+            <a href="mailto:ih7063768@gmail.com">ih7063768@gmail.com</a>
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="row-icon">📞</div>
+          <div class="row-text">
+            <strong>Phone / WhatsApp</strong>
+            <a href="tel:+923027063768">+92 302 7063768</a>
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="row-icon">🕐</div>
+          <div class="row-text">
+            <strong>Response Time</strong>
+            <span>We typically respond within 24–48 hours</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:14px;">
+        <a class="contact-cta" href="mailto:ih7063768@gmail.com">✉️ Send us an email</a>
+      </div>
+    </div>
+
+    <!-- Common Issues -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">❓</div>
+        <h2>Common Issues</h2>
+      </div>
+      <div class="card">
+        <div class="card-row">
+          <div class="row-icon">🔔</div>
+          <div class="row-text">
+            <strong>Notifications not working</strong>
+            <span>Check app notification permissions in device Settings</span>
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="row-icon">🕌</div>
+          <div class="row-text">
+            <strong>Incorrect prayer times</strong>
+            <span>Ensure location access is enabled and city is set correctly</span>
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="row-icon">🌐</div>
+          <div class="row-text">
+            <strong>Language not changing</strong>
+            <span>Go to Settings → App Language, select and restart the app</span>
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="row-icon">📚</div>
+          <div class="row-text">
+            <strong>Reading progress lost</strong>
+            <span>Progress is stored locally; avoid clearing app data</span>
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="row-icon">💥</div>
+          <div class="row-text">
+            <strong>App crashes or freezes</strong>
+            <span>Update to the latest version or reinstall the app</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">✨</div>
+        <h2>What's Inside the App</h2>
+      </div>
+      <div class="features">
+        <div class="feature-tile">
+          <span class="emoji">📖</span>
+          <strong>Full Quran</strong>
+          <p>All 114 Surahs with Arabic text, translation & transliteration</p>
+        </div>
+        <div class="feature-tile">
+          <span class="emoji">🕌</span>
+          <strong>Prayer Times</strong>
+          <p>Accurate Fajr–Isha times with Hanafi & Shafi support</p>
+        </div>
+        <div class="feature-tile">
+          <span class="emoji">✨</span>
+          <strong>Asma ul Husna</strong>
+          <p>All 99 beautiful names of Allah with meanings</p>
+        </div>
+        <div class="feature-tile">
+          <span class="emoji">🤲</span>
+          <strong>Dua Collections</strong>
+          <p>100+ Duas organized by theme, occasion & emotion</p>
+        </div>
+        <div class="feature-tile">
+          <span class="emoji">💬</span>
+          <strong>Emotional Guidance</strong>
+          <p>Quranic verses for gratitude, sadness, anger & more</p>
+        </div>
+        <div class="feature-tile">
+          <span class="emoji">🌍</span>
+          <strong>4 Languages</strong>
+          <p>English, اردو, हिंदी & বাংলা fully supported</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">ℹ️</div>
+        <h2>About Qalb e Qurani</h2>
+      </div>
+      <div class="card">
+        <div class="card-row">
+          <div class="row-text" style="padding: 2px 0;">
+            <span style="font-size:0.9rem; color: var(--ink); line-height: 1.7;">
+              Qalb e Qurani (قلبِ قرآنی) is a comprehensive Islamic companion app designed to help
+              Muslims stay connected to the Quran, track prayers, and find spiritual guidance in
+              everyday moments. Available in English, Urdu, Hindi, and Bengali, it is built for
+              Muslims around the world.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">⚠️</div>
+        <h2>Disclaimer</h2>
+      </div>
+      <div class="disclaimer">
+        Prayer times in Qalb e Qurani are calculated based on your device location and selected
+        calculation method (Hanafi / Shafi). For religious rulings or confirmation of prayer times,
+        please consult a qualified Islamic scholar or your local mosque.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    © 2026 IH Soft. All rights reserved. &nbsp;·&nbsp;
+    <a href="mailto:ih7063768@gmail.com">ih7063768@gmail.com</a>
+  </div>
+
+</body>
+</html>
