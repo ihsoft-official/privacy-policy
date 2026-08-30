@@ -1,3 +1,4 @@
+cat > privacy-policy.html <<'EOF'
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,113 +6,316 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Privacy Policy — Gluco Vital</title>
   <style>
-    body { font-family: Arial, Helvetica, sans-serif; line-height:1.6; padding:24px; max-width:900px; margin:0 auto; color:#111; }
-    header { text-align:center; margin-bottom:18px; }
-    h1{ margin:0; font-size:28px; }
-    h2{ margin-top:20px; font-size:18px; }
-    p{ margin:10px 0; }
-    .small { font-size:13px; color:#555; }
-    ul { margin:8px 0 8px 20px; }
-    .note { background:#f1f7ff; padding:10px; border-left:4px solid #4a90e2; margin:12px 0; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      padding: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #111;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    h2 {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #555;
+    }
+
+    ul {
+      margin: 8px 0 8px 20px;
+    }
+
+    .note {
+      background: #f1f7ff;
+      padding: 10px;
+      border-left: 4px solid #4a90e2;
+      margin: 12px 0;
+    }
   </style>
 </head>
 
 <body>
+
   <header>
     <h1>Privacy Policy — Gluco Vital</h1>
-    <p class="small">Effective date: <strong>May 18, 2026</strong></p>
+    <p class="small">
+      Effective date: <strong>August 30, 2026</strong>
+    </p>
   </header>
 
   <section>
     <p>
-      Gluco Vital ("we", "our", or "us") is a lifestyle health tracking application that allows users to log personal wellness data such as blood sugar readings, blood pressure readings, and related health entries. The app also provides charts, insights, and downloadable reports for personal record keeping and sharing with healthcare professionals.
+      Gluco Vital ("we", "our", or "us") is a lifestyle health tracking
+      application that allows users to log personal wellness data such as
+      blood sugar readings, blood pressure readings, and related health
+      entries. The app also provides charts, insights, and downloadable
+      reports for personal record keeping and sharing with healthcare
+      professionals.
     </p>
+
     <p>
-      This Privacy Policy explains how your information is collected, used, and protected when you use Gluco Vital.
+      This Privacy Policy explains how your information is collected, used,
+      stored, and shared when you use Gluco Vital.
     </p>
   </section>
 
   <h2>1. Information we collect</h2>
+
   <p>
-    Gluco Vital collects and stores the following types of data to provide core app functionality:
+    Gluco Vital may collect and process the following types of information
+    depending on the features you use:
   </p>
+
   <ul>
-    <li><strong>User-entered health data</strong> — blood sugar readings, blood pressure readings, timestamps, and notes you manually add.</li>
-    <li><strong>Account information</strong> — if sign-in is enabled, basic authentication data such as email or user ID via Firebase Authentication.</li>
-    <li><strong>App usage data</strong> — basic analytics such as feature usage, crash reports, and performance data.</li>
+    <li>
+      <strong>User-entered health data</strong> — blood sugar readings,
+      blood pressure readings, timestamps, notes, and other wellness
+      information that you manually enter into the app.
+    </li>
+
+    <li>
+      <strong>Account information</strong> — if sign-in is enabled, basic
+      authentication information such as an email address or user ID may be
+      processed through Firebase Authentication.
+    </li>
+
+    <li>
+      <strong>App usage and diagnostic data</strong> — information such as
+      app interactions, feature usage, crash reports, and performance data
+      may be collected to help us understand and improve the application.
+    </li>
+
+    <li>
+      <strong>Device and advertising information</strong> — when advertising
+      services are enabled, third-party advertising providers such as Google
+      AdMob may collect information including device identifiers, advertising
+      identifiers, IP address, advertising information, performance
+      information, and interactions with advertisements.
+    </li>
   </ul>
 
   <p>
-    We do not sell your personal data. Your information is used only to provide app functionality and improve user experience.
+    We do not sell your personal health information or use your health
+    readings for advertising purposes.
   </p>
 
   <h2>2. How we use your data</h2>
-  <p>We use collected information to:</p>
+
+  <p>We may use collected information to:</p>
+
   <ul>
     <li>Store and sync your records across devices</li>
     <li>Generate charts and personal insights from your entries</li>
     <li>Create downloadable reports for personal records or sharing</li>
+    <li>Provide authentication and account-related functionality</li>
     <li>Improve app performance, stability, and user experience</li>
+    <li>Display and measure advertisements within the application</li>
+    <li>Provide relevant or personalized advertising where permitted</li>
   </ul>
 
-  <h2>3. Data storage and security</h2>
+  <h2>3. Advertising</h2>
+
   <p>
-    All user data is securely stored using Firebase (Google Cloud). We apply industry-standard security practices to protect your data from unauthorized access, loss, or misuse.
+    Gluco Vital uses third-party advertising services, including
+    <strong>Google AdMob</strong>, to display advertisements within the app
+    and help measure advertising performance.
+  </p>
+
+  <p>
+    Google AdMob may collect information such as device identifiers,
+    advertising identifiers, IP address, advertising data, performance
+    information, crash information, and interactions with advertisements.
+    This information may be used for advertising, analytics, fraud
+    prevention, measurement, and improving advertising performance.
+  </p>
+
+  <p>
+    Depending on your device settings, permissions, location, applicable
+    laws, and consent choices, advertisements may be personalized or
+    non-personalized.
+  </p>
+
+  <p>
+    Gluco Vital does not use your blood glucose readings, blood pressure
+    readings, medical records, or other health information that you enter
+    into the app to personalize advertisements.
+  </p>
+
+  <h2>4. App Tracking Transparency (iOS)</h2>
+
+  <p>
+    On iOS devices, Gluco Vital may request permission through Apple's
+    App Tracking Transparency (ATT) framework to access the device's
+    advertising identifier and support personalized advertising and
+    advertising measurement.
+  </p>
+
+  <p>
+    If you grant permission, applicable advertising partners may use the
+    device advertising identifier for advertising and measurement purposes.
+    If you deny permission, the advertising identifier is not made available
+    to the Google Mobile Ads SDK for its ad requests.
+  </p>
+
+  <p>
+    You can manage or change your tracking permission at any time through
+    your device's privacy settings.
+  </p>
+
+  <h2>5. Data storage and security</h2>
+
+  <p>
+    User data may be securely stored using Firebase and Google Cloud
+    services. We apply reasonable technical and organizational security
+    measures designed to protect your information from unauthorized access,
+    loss, misuse, or disclosure.
   </p>
 
   <p class="note">
-    Your data is encrypted in transit and stored securely in cloud databases. Access is restricted to your authenticated account only.
+    Data transmitted between the app and our services is protected using
+    encryption in transit. Access to account-related information is
+    restricted according to applicable authentication and security controls.
   </p>
 
-  <h2>4. Third-party services</h2>
+  <h2>6. Third-party services</h2>
+
   <p>
-    We may use third-party services for authentication, analytics, and crash reporting, including:
+    Gluco Vital may use third-party services to provide authentication,
+    analytics, crash reporting, cloud services, and advertising. These
+    services may process information according to their respective privacy
+    policies.
   </p>
+
   <ul>
-    <li>Firebase Authentication — https://firebase.google.com/support/privacy</li>
-    <li>Firebase Analytics — https://firebase.google.com/support/privacy</li>
-    <li>Google Crashlytics — https://firebase.google.com/support/privacy</li>
+    <li>
+      <strong>Firebase Authentication</strong> — used for authentication
+      and account management.
+    </li>
+
+    <li>
+      <strong>Firebase Analytics</strong> — used to understand app usage
+      and improve the application.
+    </li>
+
+    <li>
+      <strong>Firebase Crashlytics</strong> — used to identify and diagnose
+      crashes and stability issues.
+    </li>
+
+    <li>
+      <strong>Google AdMob</strong> — used to display advertisements and
+      measure advertising performance.
+    </li>
   </ul>
 
   <p>
-    These services may collect limited technical data according to their own privacy policies.
+    Information about Google's privacy practices is available at:
+    https://policies.google.com/privacy
   </p>
 
-  <h2>5. App permissions</h2>
+  <h2>7. App permissions</h2>
+
   <p>
-    Gluco Vital may request only necessary permissions such as internet access for syncing data and optional storage access for exporting reports. No unnecessary permissions are used.
+    Gluco Vital requests permissions only when required for specific app
+    functionality. Depending on the features used, permissions may include
+    internet/network access, notification access, file or storage access for
+    exporting reports, and advertising/tracking permission on supported iOS
+    devices.
   </p>
 
-  <h2>6. Reports and data export</h2>
+  <h2>8. Reports and data export</h2>
+
   <p>
-    The app allows users to generate personal reports (PDF or similar formats) summarizing logged data. These reports are created locally or securely within the app and are only shared when the user chooses to export them.
+    The app allows users to generate personal reports in formats such as
+    PDF or CSV summarizing logged information. These reports are generated
+    within the app and are shared only when the user chooses to export or
+    share them.
   </p>
 
-  <h2>7. Children’s privacy</h2>
+  <h2>9. Health information and advertising</h2>
+
   <p>
-    Gluco Vital is intended for general wellness tracking and is not directed toward children under 13. We do not knowingly collect data from children. If such data is detected, it will be removed promptly.
+    Health information entered into Gluco Vital, including blood sugar and
+    blood pressure readings, is used to provide the app's health tracking,
+    charts, calculations, and reporting features.
   </p>
 
-  <h2>8. Your data rights</h2>
-  <p>You have full control over your data. You may:</p>
+  <p>
+    We do not intentionally use user-entered health information to create
+    advertising profiles, personalize advertisements, or target users with
+    health-related advertisements.
+  </p>
+
+  <h2>10. Children's privacy</h2>
+
+  <p>
+    Gluco Vital is intended for general wellness tracking and is not
+    directed toward children under 13. We do not knowingly collect
+    personal information from children under 13. If we become aware that
+    such information has been collected, we will take reasonable steps to
+    delete it.
+  </p>
+
+  <h2>11. Your data rights and choices</h2>
+
+  <p>You have control over your information and may:</p>
+
   <ul>
     <li>View your stored records at any time</li>
-    <li>Edit or delete entries</li>
-    <li>Delete your account and all associated data</li>
+    <li>Edit or delete your health entries</li>
+    <li>Export or share your reports</li>
+    <li>Delete your account and associated account data</li>
+    <li>Manage advertising and tracking permissions through your device settings</li>
   </ul>
 
-  <h2>9. Data retention</h2>
+  <h2>12. Data retention</h2>
+
   <p>
-    Your data is retained as long as your account is active. If you delete your account, all associated data is permanently removed from our systems within a reasonable timeframe.
+    Your account and associated information may be retained while your
+    account remains active or as necessary to provide the requested
+    services.
   </p>
 
-  <h2>10. Changes to this policy</h2>
   <p>
-    We may update this Privacy Policy from time to time. Any changes will be reflected in this document with an updated effective date.
+    If you delete your account, we will take reasonable steps to delete
+    associated account data within a reasonable timeframe, subject to
+    applicable legal, security, backup, and operational requirements.
   </p>
 
-  <h2>11. Contact us</h2>
-  <p>If you have any questions or concerns, contact us:</p>
+  <h2>13. Changes to this policy</h2>
+
+  <p>
+    We may update this Privacy Policy from time to time to reflect changes
+    to the app, our services, third-party services, legal requirements, or
+    data practices. Changes will be reflected in this document with an
+    updated effective date.
+  </p>
+
+  <h2>14. Contact us</h2>
+
+  <p>
+    If you have any questions or concerns about this Privacy Policy or
+    Gluco Vital's data practices, contact us:
+  </p>
+
   <ul>
     <li>Email: <strong>ih7063768@gmail.com</strong></li>
     <li>App Name: <strong>Gluco Vital</strong></li>
@@ -119,9 +323,13 @@
 
   <footer style="margin-top:24px; border-top:1px solid #eee; padding-top:12px;">
     <p class="small">
-      This Privacy Policy describes how Gluco Vital handles user-generated wellness data and uses Firebase services to securely store information. The app does not sell user data.
+      This Privacy Policy describes how Gluco Vital handles user-generated
+      wellness data, uses Firebase services, and uses third-party advertising
+      services such as Google AdMob. Gluco Vital does not sell user-entered
+      health information.
     </p>
   </footer>
 
 </body>
 </html>
+EOF
