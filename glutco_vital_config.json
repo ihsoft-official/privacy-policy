@@ -1,5 +1,5 @@
 {
-  "android_approving":false,
+  "android_approving":true,
   "ios_approving": false,
   "interstitial_frequency": 5
 }
