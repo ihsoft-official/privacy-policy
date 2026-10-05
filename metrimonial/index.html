@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metrimonial — Muslim Matchmaking & Nikah App</title>
+  <style>
+    :root {
+      --primary: #8B2942;
+      --primary-dark: #5F1A2B;
+      --primary-light: #FDF2F4;
+      --accent: #E5C158;
+      --text: #2D3748;
+      --text-muted: #718096;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border: #E2E8F0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 24px;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn-contact {
+      background-color: var(--primary);
+      color: white !important;
+      padding: 8px 18px;
+      border-radius: 20px;
+      transition: background-color 0.2s;
+    }
+
+    .btn-contact:hover {
+      background-color: var(--primary-dark);
+    }
+
+    /* Hero Banner Section */
+    .hero {
+      max-width: 1100px;
+      margin: 32px auto;
+      padding: 0 16px;
+      text-align: center;
+    }
+
+    .hero-banner-wrap {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      border: 1px solid var(--border);
+      background-color: #E35275;
+      margin-bottom: 32px;
+    }
+
+    .hero-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 28px;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-store {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #1A202C;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .btn-store:hover {
+      transform: translateY(-2px);
+      background-color: var(--primary);
+    }
+
+    /* Features Section */
+    .features {
+      max-width: 1100px;
+      margin: 64px auto;
+      padding: 0 16px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 26px;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin: 0 auto 18px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* Support & Contact Section */
+    .support-section {
+      background: var(--card-bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 16px;
+      margin-top: 64px;
+    }
+
+    .support-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-card {
+      background: var(--primary-light);
+      border: 2px dashed var(--primary);
+      border-radius: 16px;
+      padding: 32px 24px;
+      margin-top: 28px;
+    }
+
+    .email-link {
+      display: inline-block;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      margin-top: 12px;
+      padding: 10px 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .email-link:hover {
+      text-decoration: underline;
+    }
+
+    /* FAQ */
+    .faq {
+      max-width: 800px;
+      margin: 48px auto 0;
+      text-align: left;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+
+    .faq-q {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    .faq-a {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    .footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 24px;
+      }
+      .nav-links {
+        gap: 12px;
+        font-size: 14px;
+      }
+      .footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">♥</div>
+        Metrimonial
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#support">Support</a>
+        <a href="privacy_policy.html">Privacy Policy</a>
+        <a href="terms_conditions.html">Terms</a>
+        <a href="#support" class="btn-contact">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-banner-wrap">
+      <img src="banner.png" alt="Metrimonial — Muslim Matchmaking & Nikah App" class="hero-banner">
+    </div>
+
+    <h1 class="hero-title">Serious Matchmaking for Muslim Nikah</h1>
+    <p class="hero-subtitle">Connect with verified Pakistani & Muslim profiles built on trust, privacy, and traditional family values.</p>
+
+    <div class="cta-group">
+      <a href="#support" class="btn-store">
+        <span></span> Apple App Store
+      </a>
+      <a href="#support" class="btn-store">
+        <span>▶</span> Google Play Store
+      </a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <h2 class="section-title">Why Choose Metrimonial?</h2>
+    <p class="section-subtitle">Designed specifically for adult Muslims seeking serious marriage partners.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">🛡️</div>
+        <h3 class="card-title">Verified Profiles</h3>
+        <p class="card-desc">Email authentication and profile reviews ensure an authentic community of genuine candidates.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <h3 class="card-title">Advanced Filters</h3>
+        <p class="card-desc">Filter by location, city, age, education, profession, height, sect, and specific preferences.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">💌</div>
+        <h3 class="card-title">Respectful Requests</h3>
+        <p class="card-desc">Express interest through daily connection requests without overwhelming casual swiping.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔒</div>
+        <h3 class="card-title">Private & Safe Chat</h3>
+        <p class="card-desc">Communicate privately once an interest request is mutually accepted. Built-in contact privacy safeguards.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support & Contact Section -->
+  <section class="support-section" id="support">
+    <div class="support-container">
+      <h2 class="section-title">App Support & Help Center</h2>
+      <p class="section-subtitle">Need assistance with your account, profile verification, or subscriptions? Our support team is here to help.</p>
+
+      <div class="contact-card">
+        <h3 style="font-size: 18px; color: var(--primary-dark);">Contact Support Team</h3>
+        <p style="margin-top: 6px; font-size: 14px; color: var(--text-muted);">Email us directly and we will respond within 24 hours:</p>
+        <a href="mailto:ih7063768@gmail.com" class="email-link">✉️ ih7063768@gmail.com</a>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="faq">
+        <h3 style="font-size: 20px; color: var(--primary-dark); margin-bottom: 16px; text-align: center;">Frequently Asked Questions</h3>
+
+        <div class="faq-item">
+          <div class="faq-q">How do I verify my profile?</div>
+          <div class="faq-a">Complete your basic profile details and verify your email address. Verified profiles appear prominently in candidate searches.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How do I manage or cancel my Premium subscription?</div>
+          <div class="faq-a">Subscriptions auto-renew through your Google Play Store or Apple App Store account settings. You can manage or cancel your subscription anytime in your store account settings.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How do I delete my account and personal data?</div>
+          <div class="faq-a">You can delete your account permanently inside the app via <i>Settings -> Delete Account</i>, or email us at <b>ih7063768@gmail.com</b> to request account deletion.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div>&copy; 2026 Metrimonial. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="privacy_policy.html">Privacy Policy</a>
+      <a href="terms_conditions.html">Terms & Conditions</a>
+      <a href="mailto:ih7063768@gmail.com">Contact Support</a>
+    </div>
+  </footer>
+
+</body>
+</html>
