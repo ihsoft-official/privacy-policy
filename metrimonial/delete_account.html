@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Account — Metrimonial</title>
+
+  <style>
+    :root {
+      --primary: #8B2942;
+      --primary-dark: #5F1A2B;
+      --primary-light: #FDF2F4;
+      --accent: #E5C158;
+      --text: #2D3748;
+      --text-muted: #718096;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border: #E2E8F0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 24px;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn-contact {
+      background-color: var(--primary);
+      color: white !important;
+      padding: 8px 18px;
+      border-radius: 20px;
+    }
+
+    /* Main */
+    .hero {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .hero-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+    }
+
+    .hero-title {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      font-size: 17px;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto 70px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .card h2 {
+      color: var(--primary-dark);
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .card ul {
+      padding-left: 24px;
+      color: var(--text-muted);
+    }
+
+    .card li {
+      margin-bottom: 8px;
+    }
+
+    .contact-card {
+      background: var(--primary-light);
+      border: 2px dashed var(--primary);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    .contact-card h2 {
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .email-link {
+      display: inline-block;
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      margin-top: 12px;
+      padding: 10px 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .email-link:hover {
+      text-decoration: underline;
+    }
+
+    .note {
+      background: #FFFBEB;
+      border-left: 4px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 8px;
+      color: var(--text-muted);
+      margin-top: 16px;
+    }
+
+    /* Footer */
+    .footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        margin: 35px auto;
+      }
+
+      .hero-title {
+        font-size: 26px;
+      }
+
+      .nav-links a:not(.btn-contact) {
+        display: none;
+      }
+
+      .card {
+        padding: 24px 20px;
+      }
+
+      .footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="brand">
+        <div class="brand-icon">♥</div>
+        Metrimonial
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="privacy_policy.html">Privacy Policy</a>
+        <a href="terms_conditions.html">Terms</a>
+        <a href="#contact" class="btn-contact">Contact Us</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+
+    <div class="hero-icon">🗑️</div>
+
+    <h1 class="hero-title">Delete Your Metrimonial Account</h1>
+
+    <p class="hero-subtitle">
+      You can request permanent deletion of your Metrimonial account and
+      associated personal data at any time.
+    </p>
+
+  </section>
+
+  <!-- Content -->
+  <main class="content">
+
+    <!-- How to Delete -->
+    <div class="card">
+      <h2>How to Request Account Deletion</h2>
+
+      <p>
+        To request deletion of your Metrimonial account and associated
+        personal data, send an email to our support team.
+      </p>
+
+      <p>
+        Please send the request from the email address associated with your
+        Metrimonial account and include the following:
+      </p>
+
+      <ul>
+        <li>Your Metrimonial account email address</li>
+        <li>A clear request to delete your account</li>
+      </ul>
+
+      <div class="contact-card" id="contact">
+        <h2>Contact Metrimonial Support</h2>
+
+        <p>
+          Email us and our support team will process your account deletion
+          request.
+        </p>
+
+        <a
+          href="mailto:ih7063768@gmail.com"
+          class="email-link">
+          ✉️ ih7063768@gmail.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Deleted Data -->
+    <div class="card">
+      <h2>Data That Will Be Deleted</h2>
+
+      <p>
+        When your account deletion request is completed, the following
+        account-associated personal data will be deleted where applicable:
+      </p>
+
+      <ul>
+        <li>Profile information</li>
+        <li>Profile photos</li>
+        <li>Education and profession information</li>
+        <li>Location and matchmaking preferences</li>
+        <li>Interest requests associated with your account</li>
+        <li>Account-related personal information</li>
+      </ul>
+    </div>
+
+    <!-- Retained Data -->
+    <div class="card">
+      <h2>Data That May Be Retained</h2>
+
+      <p>
+        Certain information may need to be retained for legitimate purposes,
+        including legal compliance, fraud prevention, security, dispute
+        resolution, or other obligations required by applicable law.
+      </p>
+
+      <p>
+        Any information retained for these purposes will only be kept for as
+        long as reasonably necessary or as required by applicable law.
+      </p>
+
+      <div class="note">
+        <strong>Important:</strong>
+        Account deletion is intended to permanently remove your account and
+        associated personal data. Some information may remain where retention
+        is legally required or necessary for legitimate security purposes.
+      </div>
+    </div>
+
+    <!-- Processing Time -->
+    <div class="card">
+      <h2>Processing Time</h2>
+
+      <p>
+        We will review and process your account deletion request within a
+        reasonable period. Once the deletion process has been completed,
+        we will notify you by email.
+      </p>
+    </div>
+
+    <!-- Support -->
+    <div class="card">
+      <h2>Need Help?</h2>
+
+      <p>
+        If you have any questions about account deletion, your personal data,
+        or your Metrimonial account, please contact our support team.
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <a
+          href="mailto:ih7063768@gmail.com"
+          style="color: var(--primary);">
+          ih7063768@gmail.com
+        </a>
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+
+    <div>
+      &copy; 2026 Metrimonial. All rights reserved.
+    </div>
+
+    <div class="footer-links">
+      <a href="privacy_policy.html">Privacy Policy</a>
+      <a href="terms_conditions.html">Terms & Conditions</a>
+      <a href="mailto:ih7063768@gmail.com">Contact Support</a>
+    </div>
+
+  </footer>
+
+</body>
+</html>
